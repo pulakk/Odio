@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebAudioAPI</title>
+
+	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/css/bootstrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Exo:900" rel="stylesheet">
+
+	<script src="/assets/js/jquery.min.js"></script>
+
+	<script src="/assets/js/classes/arena.js"></script>
+	<script src="/assets/js/classes/player.js"></script>
+	<script src="/assets/js/classes/records.js"></script>
+	<script src="/assets/js/classes/arenaNode.js"></script>
+	<script src="/assets/js/classes/beatStudio.js"></script>
+	<script src="/assets/js/classes/tuneStudio.js"></script>
+
+	<script src="/assets/js/mic.js"></script>
+	<script src="/assets/js/beatmodule.js"></script>
+	<script src="/assets/js/keras.min.js"></script>
+	<script src="/assets/js/pitchmodule.js"></script>
+	<script src="/assets/js/sounds.js"></script>
+	<script src="/assets/js/core.js"></script>
+	<script src="/assets/js/load.js"></script>
+	<script src="/assets/js/wheel.min.js"></script>
+	<script src="/assets/js/main.js"></script>
+</head>
+
+<body>
+
+	<!-- header elements -->
+	<div id="header">
+		<div id="logo_container">ODIO</div>
+		<div id="options">
+			<div class="option" id="create_beat">&#9955 Beats</div>
+			<div class="option" id="create_tune">&#9835 Tunes</div>
+			<div class="option" id="play_button"><span class="glyphicon glyphicon-play"></span></div> 
+		</div>
+	</div>
+
+	<!--  studio for recorders  -->
+	<div class="studio" id="beat_studio">
+		<div class="studio-bg"></div>
+		<div class="studio-main">
+			<div class="studio-title">BEATS STUDIO</div>
+			<canvas id="beat_canvas" width="1000" height="300"></canvas>
+			<div id="beat_plot">Error displaying beat...</div>
+			<div class="media_option" id="beat_record_button"><span class="glyphicon glyphicon-record"></span></div>
+			<div class="media_option" id="beat_play_button"><span class="glyphicon glyphicon-play"></span></div>
+			<div class="studio-list-container" id="beat-studio-list-container">
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="studio" id="tune_studio">
+		<div class="studio-bg"></div>
+		<div class="studio-main">
+			<div class="studio-title">TUNES STUDIO</div>
+			<canvas id="tune_canvas" width="1000" height="600"></canvas>
+			<div class="media_option" id="tune_record_button"><span class="glyphicon glyphicon-record"></span></div>
+			<div class="media_option" id="tune_play_button"><span class="glyphicon glyphicon-play"></span></div>
+			<div class="media_option" id="tune_reset_button"><span class="glyphicon glyphicon-repeat"></span></div>
+			<div class="studio-list-container" id="tune-studio-list-container">
+				
+			</div>
+		</div>
+	</div>
+
+	<!-- beat arena  -->
+	<div id="beat_arena_full">
+		<div id="beat_arena_container">
+			<div class="arena" id="beat_arena">
+			</div>
+		</div>
+		<div id="beat_options">
+			O
+		</div>
+	</div>
+
+	<div id="play_container"></div>
+
+	<!-- tune arena  -->
+	<div id="tune_arena_full">
+		<div id="tune_arena_container">
+			<div class="arena" id="tune_arena">
+			</div>
+		</div>
+		<div id="tune_options">
+			O
+		</div>
+	</div>
+
+	<!-- beat list context menu -->
+	<div id="beat_list">
+	</div>
+
+	<!-- tune list context menu -->
+	<div id="tune_list">
+	</div>
+
+</body>
+</html>

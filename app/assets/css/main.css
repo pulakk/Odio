@@ -1,0 +1,319 @@
+html{
+	background:#eee;
+}
+body{
+	margin:0px;
+	padding:0px;
+	background:#eee;
+}
+canvas{
+	border:1px solid #bbb;
+	width:100%;
+	background:#eee;
+	grid-column:1/4;
+}
+div{
+	padding:10px;
+	box-sizing: border-box;
+	align-items:center;
+	text-align: center; 
+	font-family: Exo;
+	color:#555;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */ 	
+}
+img{
+	height:100%;
+	width:100%;
+}
+/* header elements */
+.empty{
+	padding:0px;
+	background:none;
+}
+#header{
+	background:linear-gradient(5deg, #bbf, #ffa);
+	color:#22252c;
+	padding:0px;
+	display:grid;
+	grid-template-columns:5fr 1fr;
+}
+#logo_container{
+	padding:10px;
+	font-size:15px;
+}
+#options{
+	display:grid;
+	grid-template-columns:90px 90px 50px;
+	grid-gap:10px;
+	justify-items:center;
+	align-items:center;
+}
+.option{
+	height:40px;
+	width:100%;
+	background:linear-gradient(#fafafa, #eee);
+	border-radius:5px;
+	box-shadow:0px 0px 10px #ccc;
+	max-width:100px;
+	position:relative;
+	float:left;
+	margin-right:10px;
+	border:1px solid #bbb;
+	transition:all 0.1s;
+}
+.option:hover{
+	cursor:pointer;
+}
+.option:active{
+	background:linear-gradient(#f3f3f3, #eee);
+}
+/* player elements */
+#play_container{
+	position:absolute;
+	padding:0px;
+	top:62px;
+	width:10px;
+	height:610px;
+	z-index:2;
+	background:#ddd;
+	opacity:0.5;
+}
+#play_button{
+	display:grid;
+	justify-items:center;
+	align-items:center;
+	/*transition:all 0.1s;*/
+}
+#play_button:hover{
+	cursor:pointer;
+}
+
+/* arena elements */
+.arena{
+	padding:0px;
+	height:100%;
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	grid-gap:1px;
+}
+.arena_node{
+	padding:0px;
+	height:100%;
+	display:grid;
+	justify-items:center;
+	align-items:center;
+	grid-template-columns:1fr 50px;
+	border-radius:5px;
+	color:#888;
+	background:linear-gradient(#f6f6f6, #eee);
+	box-shadow: 0px 0px 10px #ddd;
+	border:1px solid #bbb;
+	/*border-radius:5px;*/
+}
+.arena_node:hover{
+	cursor:pointer;
+}
+.arena_node:active{
+	background:linear-gradient(#f6f6f6, #eaeaea);
+}
+#beat_arena_full{
+	padding:0px;
+	position:relative;
+	width:100%;
+	height:300px;
+	border:1px solid #bbb;
+	background:#eee;
+	display:flex;
+}
+#beat_arena_container{
+	padding:0px;
+	flex:1;
+	height:100%;
+	box-shadow: inset 0px 0px 40px #bbb;
+	overflow-x:scroll;
+}
+#beat_options{
+	/*overflow-y:scroll;*/
+	height:100%;
+	width:50px;
+	border-left:1px solid #bbb;
+	background:#eee;
+}
+
+#tune_arena_full{
+	padding:0px;
+	position:relative;
+	width:100%;
+	height:300px;
+	border:1px solid #bbb;
+	background:#eee;
+	display:flex;
+}
+#tune_arena_container{
+	padding:0px;
+	flex:1;
+	height:100%;
+	box-shadow: inset 0px 0px 40px #bbb;
+	overflow-x:scroll;
+}
+#tune_options{
+	overflow-y:scroll;
+	height:100%;
+	width:50px;
+	border-left:1px solid #bbb;
+	background:#eee;
+}
+
+/* context menu for beats
+	 and tunes list */
+#beat_list{
+	position:absolute;
+	left:0px;
+	padding:0px;
+	top:0px;
+	background:#fafafa;
+	border:1px solid #aaa;
+	display:none;
+}
+#tune_list{
+	position:absolute;
+	left:0px;
+	padding:0px;
+	top:0px;
+	border:1px solid #aaa;
+	background:#fafafa;
+	display:none;
+}
+.list_item{
+	width:100px;
+	transition:all 0.1s;
+}
+.list_item:hover{
+	color:white;
+	background:#aaf;
+	cursor:pointer;
+}
+
+/* awesome studio */
+.studio{
+	position:fixed;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	left:0px;
+	display:grid;
+	justify-items:center;
+	align-items:center;
+	z-index:8;
+	padding:0px;
+}
+.studio-bg{
+	background:#444;
+	opacity: 0.6;
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+.studio-main{
+	background:#fafafa;
+	border:1px solid #555;
+	border-radius:5px;
+	z-index:2;
+	padding:20px;
+	width:50%;
+	min-width:300px;
+	max-height:80%;
+	overflow-y:scroll;
+}
+.studio-title{
+	background:linear-gradient(5deg, #bbf, #ffa);
+	padding:10px;
+	color:#444;
+	font-size:16px;
+	border:1px solid #bbb;
+}
+
+div.studio-list-container{
+	width:100%;
+	background:#eee;
+	border:1px solid #bbb;
+	padding:10px;
+	position:relative;
+	float:left;
+	margin-top:10px;
+}
+div.studio-list-item{
+	border:1px solid #aaa;
+	background:#fafafa;
+}
+div.studio-list-item:hover{
+	cursor:pointer;
+	background:#eee !important;
+}
+#beat_plot{
+	display:grid;
+	padding:0px;
+	grid-auto-rows:40px;
+	align-items:center;
+	justify-items:stretched;
+	background:#eee;
+	border:1px solid #bbb;
+}
+.beat_plot_item{
+	padding:0px;
+	width:100%;
+	height:10%;
+	background:#aaf;
+	z-index:5;
+}
+.player_bar{
+	background:#fafafa;
+	padding:0px;
+	width:100%;
+	height:100%;
+}
+.media_option{
+	padding:5px;
+	height:30px;
+	width:100%;
+	background:linear-gradient(#fafafa, #eee);
+	color:#22252c;
+	font-size:14px;
+	border-radius:5px;
+	width:60px;
+	font-weight:normal;
+	position:relative;
+	float:left;
+	margin-right:10px;
+	border:1px solid #bbb;
+	transition:all 0.1s;
+}
+
+.media_option:hover{
+	cursor:pointer;
+}
+.media_option:active{
+	background:linear-gradient(#f3f3f3, #eee);
+}
+
+/* scroll bar styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height:10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	/*border-radius:5px;*/
+    /*background:#ddd; */
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+	border:1px solid #ccc;
+    background: #eee; 
+    border-radius: 10px;
+}
